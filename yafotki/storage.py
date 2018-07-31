@@ -56,7 +56,7 @@ class YFStorage(Storage):
         pass
 
     def size(self, name):
-        print name
+        return name
 
     def url(self, path):
         return path
