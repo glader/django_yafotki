@@ -6,7 +6,7 @@ import xml.dom.minidom as minidom
 from xml.etree import ElementTree
 import feedparser
 import rsa
-import http_client
+from yafotki.client import http_client
 
 #TODO: Add exceptions for all errors
 
