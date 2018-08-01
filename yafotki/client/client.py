@@ -5,7 +5,7 @@ import urllib
 import xml.dom.minidom as minidom
 from xml.etree import ElementTree
 import feedparser
-import yarsa
+import rsa
 import http_client
 
 #TODO: Add exceptions for all errors
@@ -47,7 +47,7 @@ class YFClient(object):
 
     def login(self):
         self.get_rsa()
-        self.encrypted_login = yarsa.encrypt("<credentials login='%s' password='%s'/>" % (self.username, self.password,), self.rsa_key)
+        self.encrypted_login = rsa.encrypt("<credentials login='%s' password='%s'/>" % (self.username, self.password,), self.rsa_key)
         login_params = urllib.urlencode({
             'request_id': self.rsa_request_id,
             'credentials': self.encrypted_login
