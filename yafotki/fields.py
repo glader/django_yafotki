@@ -34,7 +34,7 @@ class YFFieldFile(FieldFile):
         default_url = self.storage.url(self.name)
         if size is not None:
             if size != 'orig':
-                sizes = self.SIZES.keys()
+                sizes = list(self.SIZES.keys())
                 sizes.sort()
                 try:
                     size = self.SIZES[sizes[bisect(sizes, int(size) - 1)]]
